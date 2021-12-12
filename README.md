@@ -17,4 +17,9 @@ asynchronous tasks execution
 access networking and filesystem asynchronously
 
 
+npm init 	# this utility will walk you through creating a package.json file
+npm init --yes 	# this utility will creat a package.json file with all the defaults
+
+npm install module_name
+
 
