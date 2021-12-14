@@ -1,4 +1,4 @@
-# nodejser
+# Nodejs
 
 
 #### Links
@@ -21,7 +21,7 @@
 - CSS
 - Typescript
 
-## Javascript
+### Javascript
 
 ---
 
@@ -46,7 +46,7 @@ npm install module_name
 
 ```
 
-## Frameworks
+### Frameworks
 
 - [X] Express
 - [ ] Next
