@@ -1,11 +1,12 @@
 # nodejser
-
 ====
+
 
 #### Links
 
-[Google It](https://google.com).
-[Youtube It](https://youtube.com "vedios")
+> [Google It](https://google.com)  
+> [Youtube It](https://youtube.com)  
+
 
 #### Images
 ![](/screenshots/image1.png)
@@ -23,17 +24,17 @@
 ## javascript
 
 
----
 benefits
+---
 
-same syntax in backend and frontend__
-data structue, object definitions and code can be shared___
-shared library___
-functions or algorithms can be reused in front and back___
-work well with json___
-dynamic language__
-asynchronous tasks execution__
-access networking and filesystem asynchronously__
+same syntax in backend and frontend  
+data structue, object definitions and code can be shared  
+shared library  
+functions or algorithms can be reused in front and back  
+work well with json  
+dynamic language  
+asynchronous tasks execution  
+access networking and filesystem asynchronously  
 
 ```
 npm init 	# this utility will walk you through creating a package.json file__
