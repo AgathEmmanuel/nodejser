@@ -27,10 +27,10 @@
 
 ## javascript
 
+---
 
 benefits
 
----
 same syntax in backend and frontend  
 data structue, object definitions and code can be shared  
 shared library  
