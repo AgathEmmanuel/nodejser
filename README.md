@@ -15,7 +15,7 @@
 <!-- This content will not appear in the rendered Markdown -->
 
 
-#### Images
+#### Bullet point list
 
 - JavaScript
 - Node
@@ -31,7 +31,6 @@
 benefits
 
 ---
-
 same syntax in backend and frontend  
 data structue, object definitions and code can be shared  
 shared library  
@@ -40,6 +39,7 @@ work well with json
 dynamic language  
 asynchronous tasks execution  
 access networking and filesystem asynchronously  
+---
 
 ```
 npm init 	# this utility will walk you through creating a package.json file__
