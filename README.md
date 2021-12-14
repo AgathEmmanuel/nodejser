@@ -6,7 +6,7 @@
 > [Google It](https://google.com)  
 > [Youtube It](https://youtube.com)  
 > [Github format](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)  
-> ![Github Cat](https://docs.github.com/assets/cb-319866/images/help/writing/image-rendered.png = 250x250)
+> ![Github Cat](https://docs.github.com/assets/cb-319866/images/help/writing/image-rendered.png =250x250)
 
 <!-- This content will not appear in the rendered Markdown -->
 
