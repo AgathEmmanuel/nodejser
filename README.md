@@ -42,8 +42,27 @@ access networking and filesystem asynchronously
 > Commands
 
 ```
-npm init 	    # this utility will walk you through creating a package.json file
-npm init --yes 	# this utility will creat a package.json file with all the defaults
+
+nvm                     # node version manager   
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+source ~/.bashrc
+
+nvm list-remote         # to list all available nvm versions
+nvm install v14.10.0
+nvm list                # to seed different versions you have installed
+node -v                 # to check the version you have installed
+nvm use v14.10.0        # to use that particular version of node
+
+
+mkdir -p ./install/here/node_modules
+npm install --prefix ./install/here <package>     # The package(s) will then be installed in ./install/here/node_modules.
+						    The mkdir is needed since npm might otherwise choose an already existing
+                                                    node_modules directory higher up in the hierarchy.
+
+npm init 	            # this utility will walk you through creating a package.json file
+npm init --yes 	        # this utility will creat a package.json file with all the defaults
 
 npm install module_name
 npm install -g express		# -g notation saves that package in global scope
@@ -63,9 +82,29 @@ npm install -s socket.io	# socket package need to work with express, a way is to
                             <script src="/socket.io/socket.io.js"></script>
                             var socket=io()
 
+npm install -s mongoose     # to install monogoose
+                            => server side
+                            var mongoose=require('mongose')
+                            database-url='mongodb://<username>:<password>@example.db.com:1111222/examp'
+                                # the database url should be stored in a config file for production
+                            mongoose.connect(database-url,(err)=>{
+                                console.log('connection done',err)
+                            })
+                            var Examplemodel=mongoose.model('Example',{
+                                name: String,
+                                roll-no: String,
+                            })
+                            
+
+npm install --save-dev jasmine      # to install jasmine only as a dev dependency and not needed in production
+                                    ./node_modules/.bin/jasmine init   #to initiate jasming config and spec folder  
+
+npm install --save-dev request
+
+
 ```
 
-> Notes
+## Notes
 
 nvm => Node Version Manager  
 npm => Node Package Manager  
@@ -75,6 +114,18 @@ major vscode extensions to use
 
 - ES7 React/Redux/GraphQL/React-Native snippets v1.9.3
 - Prettier - Code formatter v9.0.0
+
+Asynchronous coding
+
+- callbacks
+- async await
+- promices
+
+
+Error Handling
+
+- try catch throw
+- finally
 
 > Express.js
 
@@ -96,7 +147,18 @@ with websockets and socket io the servers will be able to send notification to c
 server is pushing an update to a client or multiple clients.
 if browser not support webosockets it will default to polling.
 
-> Links
+> Mongoosejs
+
+allows to work with mongodb database with object schemas (javascript object that represent type
+of data that is to be stored in database) and also in validation
+
+
+> Jasmine
+
+helps in doing testing
+automate the tesing process
+
+## Links
 
 - [Is there a virtual environment for node.js?](https://stackoverflow.com/questions/3653495/is-there-a-virtual-environment-for-node-js)
 
@@ -123,3 +185,10 @@ require.paths.unshift('./vendor');
 ---
 
 - [NodeJS vs Python: How to Choose the Best Technology to Develop Your Web App's Back End](https://www.freecodecamp.org/news/nodejs-vs-python-choosing-the-best-technology-to-develop-back-end-of-your-web-app/)
+
+- [install node with nvm](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
+
+- [code sandbox](codesandbox.io)
+  enter "react.new" and it will take you to a brand new react project.
+
+- [https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/](https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/)
