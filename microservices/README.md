@@ -24,3 +24,61 @@
 - concept of grouping instances under main processes and creating resilient clusters
 - scaling data layer using techniques like horizontal partitioning
 - horizontal partitioning = spliting data between databases 
+
+> Monolithic Architecture
+```
+
+                                              __ feature A -->
+ 					     |			           | DB1 |
+ 					     |__ feature B -->
+ 					     |
+Request -->  auth middleWare -->  router  -->|
+ 					     |__ feature C -->
+ 					     |			           | DB2 |
+ 					     |__ feature D -->
+
+ 					  Business Logic    Database Access
+           |_______________________________________________________________|
+			           Monolithic Server     
+
+
+```
+
+> Microservice Architecture
+```
+             auth middleWare -->  router  -->|feature A                     | DB A|
+           |______________________________________________________________|
+			           Microservice A
+
+             auth middleWare -->  router  -->|feature B                     | DB B|
+           |______________________________________________________________|
+			           Microservice B
+ Request ->
+             auth middleWare -->  router  -->|feature C                     | DB C|
+           |______________________________________________________________|
+			           Microservice C
+
+             auth middleWare -->  router  -->|feature D                     | DB D|
+           |______________________________________________________________|
+			           Microservice D
+
+ 					  Business Logic    Database Access
+           |______________________________________________________________|
+			           Microservices
+
+
+```
+- a microservice contains all code required to run one feature correctly
+
+> Data management
+
+- how data is stored
+- how data is accessed
+- each service runs independently
+- database schema can be changed unexpectedly
+- each service will have its own database when needed
+- no service will interfere with another services database
+- each functionality or service might be efficient with a particular type of db
+- some service requires an sql db while other need a nosql db.
+- scaling a particular service will require scaling the entire db with other services as well if many services are mapped to a single database.
+- if services interfere with other service dbs then failing of one service db will result in failure of the other service as well.
