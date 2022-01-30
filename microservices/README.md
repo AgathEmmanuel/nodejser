@@ -72,6 +72,7 @@ Request -->  auth middleWare -->  router  -->|
 
 > Data management
 
+Data management between different services is a big challenge
 - how data is stored
 - how data is accessed
 - each service runs independently
@@ -82,3 +83,29 @@ Request -->  auth middleWare -->  router  -->|
 - some service requires an sql db while other need a nosql db.
 - scaling a particular service will require scaling the entire db with other services as well if many services are mapped to a single database.
 - if services interfere with other service dbs then failing of one service db will result in failure of the other service as well.
+
+Communication between services
+- sync    [ services communicate with each other using direct requests ]
+
+
+
+  	       __  service A
+  	      | 
+   service Z  |__  service B
+  	      |
+  	      |__  service C
+
+
+- async  [ services communicate with each other using events ]
+
+Two ways to do async
+   => using async to get instant output of request of a service from other requests via event bus
+   => updating databases of all individual services using event bus when a service updates its db basically data duplication across service dbs
+
+  service A <-> ||
+  	        ||
+  service B     ||
+                || Event bus
+  service C     ||
+                ||
+  service Z <-> ||
