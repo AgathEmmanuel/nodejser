@@ -164,9 +164,18 @@ automate the tesing process
 
 
 
+
+
+
+## Tools  
+
+[https://bennettfeely.com/clippy/](https://bennettfeely.com/clippy/)  
+[https://fonts.google.com/specimen/Mochiy+Pop+One#standard-styles](https://fonts.google.com/specimen/Mochiy+Pop+One#standard-styles)  
+
+
 ## Links
 
-- [Is there a virtual environment for node.js?](https://stackoverflow.com/questions/3653495/is-there-a-virtual-environment-for-node-js)
+[Is there a virtual environment for node.js?](https://stackoverflow.com/questions/3653495/is-there-a-virtual-environment-for-node-js)
 
 ---
 
@@ -190,11 +199,11 @@ require.paths.unshift('./vendor');
 
 ---
 
-- [NodeJS vs Python: How to Choose the Best Technology to Develop Your Web App's Back End](https://www.freecodecamp.org/news/nodejs-vs-python-choosing-the-best-technology-to-develop-back-end-of-your-web-app/)
+[NodeJS vs Python: How to Choose the Best Technology to Develop Your Web App's Back End](https://www.freecodecamp.org/news/nodejs-vs-python-choosing-the-best-technology-to-develop-back-end-of-your-web-app/)
 
-- [install node with nvm](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
+[install node with nvm](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
 
-- [code sandbox](codesandbox.io)
+[code sandbox](codesandbox.io)
   enter "react.new" and it will take you to a brand new react project.
 
-- [https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/](https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/)
+[https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/](https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/)
