@@ -28,7 +28,58 @@
 
 ---
 
+> Use cases  
+
+Non-blocking  
+Event-driven  
+Data-intensive  
+I/O intesive  
+Asynchronous programming  
+async/await  
+Event Callbacks  
+
+Web servers
+Real time servers ( the way nodejs handles this kind of concurrent connection 
+is also using this asynchronous model, such that it manages a 100 concurrent  
+connections by managing a single thread by using the event driven model, 
+when there is a concurrent connection that needs some execution only then  
+will that pay attention to it )
+APIs fronting NoSQL DB
+
+
+Node.js is an excellent choice for creating an actual time application with two-way connections where the server doesn’t wait for an API to return data.
+
+
+---
+so what used to block in a multi-threaded environment, making an external call
+waiting for i/o, waiting for something data-intensive to return, or waiting for an event to return,  this things used to consumet resouce in mult threaded model
+but is efficient in nodejs, because its not waiting around its not consuming 
+resources, it just makes the call and moves along and when that returns,it will deal with it then, thats why it becomes more powerful than multi threaded models for this kind of applications, lets say we have 10 threads and 10 of your
+events end up waiting for something else, the thread pool is full and you
+have a problem and the 11nth event cannot do anything and has to waith, 
+in node js model, you can have 100 events that wait for external thing and 
+all those 100 can sit and wait there and get processed once it comes 
+
+When should you not use nodejs 
+
+if you are working on event which is not dependend on an external event  
+and is compute intensive, something like calculating the n'th prime 
+number, then nodejs should do the work and cannot pass on to next event  
+until it does the work because node application thread is doing the work
+so it will just hang there 
+
+reiterating the concept of worker threads is a possible solution here
+
+data calculations  
+processor intensive  
+blocking operations  
+
+---
+
+
+
 > Benefits
+
 
 same syntax in backend and frontend  
 data structue, object definitions and code can be shared  
@@ -173,6 +224,12 @@ automate the tesing process
 [https://fonts.google.com/specimen/Mochiy+Pop+One#standard-styles](https://fonts.google.com/specimen/Mochiy+Pop+One#standard-styles)  
 
 
+
+
+
+
+
+
 ## Links
 
 [Is there a virtual environment for node.js?](https://stackoverflow.com/questions/3653495/is-there-a-virtual-environment-for-node-js)
@@ -199,11 +256,33 @@ require.paths.unshift('./vendor');
 
 ---
 
-[NodeJS vs Python: How to Choose the Best Technology to Develop Your Web App's Back End](https://www.freecodecamp.org/news/nodejs-vs-python-choosing-the-best-technology-to-develop-back-end-of-your-web-app/)
+[NodeJS vs Python: How to Choose the Best Technology to Develop Your Web App's Back End](https://www.freecodecamp.org/news/nodejs-vs-python-choosing-the-best-technology-to-develop-back-end-of-your-web-app/)  
+[install node with nvm](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)  
+[code sandbox](codesandbox.io)  
+  enter "react.new" and it will take you to a brand new react project.  
+[https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/](https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/)  
+[https://codesource.io/javascript-design-patterns/](https://codesource.io/javascript-design-patterns/)  
+[https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns](https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns)  
+[Asynchronous JavaScript Course (Async/Await, Promises, Callbacks)](https://youtu.be/ZYb_ZU8LNxs)  
+[https://nodejs.medium.com/node-js-v15-0-0-is-here-deb00750f278](https://nodejs.medium.com/node-js-v15-0-0-is-here-deb00750f278)  
+```
+In the newest version of Node (v15+) 
+Unhandled Promise Rejections are now treated as errors instead of warnings and will cause the servers to crash.
+you'll need to add a catch block to every request of the event-bus/index.js:
 
-[install node with nvm](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04)
+      axios.post('http://localhost:4000/events', event).catch((err) => {
+        console.log(err.message);
+      });
+      axios.post('http://localhost:4001/events', event).catch((err) => {
+        console.log(err.message);
+      });
+      axios.post('http://localhost:4002/events', event).catch((err) => {
+        console.log(err.message);
+      });
+      res.send({ status: 'OK' });
 
-[code sandbox](codesandbox.io)
-  enter "react.new" and it will take you to a brand new react project.
-
-[https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/](https://www.voitanos.io/blog/don-t-be-alarmed-by-vulnerabilities-after-running-npm-install/)
+```
+[https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/](https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/)  
+[https://aws.amazon.com/msk/what-is-kafka/](https://aws.amazon.com/msk/what-is-kafka/)  
+[When and when not to use Node.js - Node.js Basics 06 - Java Brains](https://youtu.be/UCd6LorxpkY) 
+[Tech Talk: Server Scaling in Node.js](https://youtu.be/w1IzRF6AkuI)  
