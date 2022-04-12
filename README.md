@@ -217,6 +217,15 @@ automate the tesing process
 
 
 
+## error handling
+
+```
+      axios.post("http://localhost:4003/events", event).catch((err) => {
+        console.log(err.message);
+      });
+
+```
+
 
 ## Tools  
 
@@ -281,8 +290,33 @@ you'll need to add a catch block to every request of the event-bus/index.js:
       });
       res.send({ status: 'OK' });
 
+
+Required Node v15+ Update for Query Service
+In the upcoming lecture, we will be adding a GET reques
+we will need to add some error handling.
+
+Wrap the axios request and event handler in a try / catch block:
+
+    app.listen(4002, async () => {
+      console.log("Listening on 4002");
+      try {
+        const res = await axios.get("http://localhost:4005/events");
+     
+        for (let event of res.data) {
+          console.log("Processing event:", event.type);
+     
+          handleEvent(event.type, event.data);
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    });
+
 ```
 [https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/](https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/)  
 [https://aws.amazon.com/msk/what-is-kafka/](https://aws.amazon.com/msk/what-is-kafka/)  
 [When and when not to use Node.js - Node.js Basics 06 - Java Brains](https://youtu.be/UCd6LorxpkY) 
 [Tech Talk: Server Scaling in Node.js](https://youtu.be/w1IzRF6AkuI)  
+[https://jasonwatmore.com/post/2020/07/22/nodejs-express-api-request-schema-validation-with-joi](https://jasonwatmore.com/post/2020/07/22/nodejs-express-api-request-schema-validation-with-joi)  
+[https://github.com/nodejs/node/issues/34851](https://github.com/nodejs/node/issues/34851)  
+
