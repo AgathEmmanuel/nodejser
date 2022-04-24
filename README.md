@@ -232,10 +232,38 @@ automate the tesing process
 [https://bennettfeely.com/clippy/](https://bennettfeely.com/clippy/)  
 [https://fonts.google.com/specimen/Mochiy+Pop+One#standard-styles](https://fonts.google.com/specimen/Mochiy+Pop+One#standard-styles)  
 
+```
+You can also check the difference at runtime between a Server with clustering and with by using loadtest (an npm package for load tests):
+
+npm install -g loadtest
+
+And run (-n = the number of requests, -c = concurrently,-- rps = requests per second):
+
+loadtest -n 1000 -c 100 --rps 200 <host>:<port>?number=<param_fib>
+
+Then you will see a report of the longest request completion time, total time, mean latency, number of errors and other important indicators of your service’s health.
+
+Pay attention that the <param_fib> should be bigger in order to ‘feel’ the true benefits from clustering. Otherwise, it will just be overhead :)
+
+Or use Artillery (an amazing load testing tool: https://artillery.io/faq.html)
+```
 
 
 
 
+```
+
+If you did not see your server restart after changing the index.ts file, do the following:
+
+    Open the package.json file in the ‘auth’ directory
+
+    Find the ‘start’ script
+
+Update the start script to the following:
+
+ts-node-dev --poll src/index.ts 
+
+```
 
 
 
@@ -291,8 +319,8 @@ you'll need to add a catch block to every request of the event-bus/index.js:
       res.send({ status: 'OK' });
 
 
-Required Node v15+ Update for Query Service
-In the upcoming lecture, we will be adding a GET reques
+Required Node v15+ Update for
+when we are adding a GET request
 we will need to add some error handling.
 
 Wrap the axios request and event handler in a try / catch block:
@@ -312,11 +340,25 @@ Wrap the axios request and event handler in a try / catch block:
       }
     });
 
-```
+
+---
 [https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/](https://blog.logrocket.com/kafka-vs-rabbitmq-comparing-node-js-message-brokers/)  
 [https://aws.amazon.com/msk/what-is-kafka/](https://aws.amazon.com/msk/what-is-kafka/)  
 [When and when not to use Node.js - Node.js Basics 06 - Java Brains](https://youtu.be/UCd6LorxpkY) 
 [Tech Talk: Server Scaling in Node.js](https://youtu.be/w1IzRF6AkuI)  
 [https://jasonwatmore.com/post/2020/07/22/nodejs-express-api-request-schema-validation-with-joi](https://jasonwatmore.com/post/2020/07/22/nodejs-express-api-request-schema-validation-with-joi)  
 [https://github.com/nodejs/node/issues/34851](https://github.com/nodejs/node/issues/34851)  
+[https://blog.logrocket.com/mern-app-jwt-authentication-part-3/](https://blog.logrocket.com/mern-app-jwt-authentication-part-3/)  
+[https://blog.logrocket.com/mern-app-jwt-authentication-part-2/](https://blog.logrocket.com/mern-app-jwt-authentication-part-2/)  
+[https://blog.logrocket.com/mern-app-jwt-authentication-part-1/](https://blog.logrocket.com/mern-app-jwt-authentication-part-1/)  
+[Node.js / Express Course - Build 4 Projects](https://youtu.be/qwfE7fSVaZM)  
+[Node.js and Express.js - Full Course](https://youtu.be/Oe421EPjeBE)  
+[What You Need To Do To Become A Great Developer](https://youtu.be/FNk2NYW-13k)  
+[SOLID Design Principles](https://youtube.com/playlist?list=PLZlA0Gpn_vH9kocFX7R7BAe_CvvOCO_p9)  
+[Design Patterns](https://youtube.com/playlist?list=PLZlA0Gpn_vH_CthENcPCM0Dww6a5XYC7f)  
+[Learn Express Middleware In 14 Minutes](https://youtu.be/lY6icfhap2o)  
+[What is Express middleware and how does it work? (in-depth)](https://youtu.be/AZDTM0DiLG8)  
+[How To Manage User Roles In Node.js](https://youtu.be/jI4K7L-LI58)  
+[JWT Authentication Tutorial - Node.js](https://youtu.be/mbsmsi7l3r4)  
+[https://www.geeksforgeeks.org/how-to-use-an-es6-import-in-node-js/](https://www.geeksforgeeks.org/how-to-use-an-es6-import-in-node-js/)  
 
