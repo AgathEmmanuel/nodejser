@@ -361,4 +361,6 @@ Wrap the axios request and event handler in a try / catch block:
 [How To Manage User Roles In Node.js](https://youtu.be/jI4K7L-LI58)  
 [JWT Authentication Tutorial - Node.js](https://youtu.be/mbsmsi7l3r4)  
 [https://www.geeksforgeeks.org/how-to-use-an-es6-import-in-node-js/](https://www.geeksforgeeks.org/how-to-use-an-es6-import-in-node-js/)  
+[https://fireflysemantics.medium.com/moving-from-node-require-imports-to-typescript-imports-adc0b79e6b6d](https://fireflysemantics.medium.com/moving-from-node-require-imports-to-typescript-imports-adc0b79e6b6d)  
+[https://www.codecademy.com/resources/blog/typescript-vs-javascript/](https://www.codecademy.com/resources/blog/typescript-vs-javascript/)  
 
